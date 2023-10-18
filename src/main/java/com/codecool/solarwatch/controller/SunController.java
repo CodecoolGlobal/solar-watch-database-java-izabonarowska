@@ -1,5 +1,6 @@
 package com.codecool.solarwatch.controller;
 
+import com.codecool.solarwatch.model.City;
 import com.codecool.solarwatch.model.Coordinate;
 import com.codecool.solarwatch.model.SunDTO;
 import com.codecool.solarwatch.service.GeocodingService;
@@ -10,6 +11,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.time.LocalDate;
 
 @RestController
 @RequestMapping("/sun")
@@ -29,8 +32,8 @@ public class SunController {
             @RequestParam(name = "date", required = true) String date
     ) {
         try{
-            Coordinate location = geocodingService.getLatitudeAndLongitude(city);
-            SunDTO response = sunriseSunsetService.getSunriseAndSunset(location, date);
+            City cityObj = geocodingService.getLatitudeAndLongitude(city);
+            SunDTO response = sunriseSunsetService.getSunriseAndSunset(cityObj, LocalDate.parse(date));
             return ResponseEntity.ok(response);
         } catch (Exception error){
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();

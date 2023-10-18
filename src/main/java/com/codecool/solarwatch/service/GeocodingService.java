@@ -20,10 +20,9 @@ public class GeocodingService {
         this.restTemplate = new RestTemplate();
     }
 
-    public Coordinate getLatitudeAndLongitude(String cityName) {
+    public City getLatitudeAndLongitude(String cityName) {
         Optional<City> cityOpt = cityRepository.findFirstByName(cityName);
-        City city = cityOpt.orElseGet(() -> cityRepository.save(getCityFromExternalAPI(cityName)));
-        return new Coordinate(city.getLongitude(), city.getLatitude());
+        return cityOpt.orElseGet(() -> cityRepository.save(getCityFromExternalAPI(cityName)));
     }
 
     private City getCityFromExternalAPI(String cityName) {
@@ -41,6 +40,4 @@ public class GeocodingService {
         double lon = jsonObject.getDouble("lon");
         return new City(name, lon, lat, state, country);
     }
-
-
 }
