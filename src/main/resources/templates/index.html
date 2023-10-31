@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Solar Watch - homepage</title>
+
+    <link rel="stylesheet" href="../static/styles/main.css" th:href="@{/styles/main.css}" />
+</head>
+<body>
+<div class="container">
+    <h1>Solar Watch</h1>
+    <img src="../static/img/solar.jpg" th:src="@{/img/solar.jpg}"
+         alt="Solar Watch"
+         class="scaled-image"
+    />
+    <a href="#" th:href="@{/secured}" class="button">Get Solar Watch</a>
+    <a href="#" th:href="@{/admin}"class="button">Admin Panel</a>
+</div>
+</body>
+</html>

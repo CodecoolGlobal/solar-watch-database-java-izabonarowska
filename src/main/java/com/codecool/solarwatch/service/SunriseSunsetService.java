@@ -1,9 +1,9 @@
 package com.codecool.solarwatch.service;
 
 import com.codecool.solarwatch.model.City;
-import com.codecool.solarwatch.model.Coordinate;
 import com.codecool.solarwatch.model.Hours;
 import com.codecool.solarwatch.model.SunDTO;
+import com.codecool.solarwatch.repository.HoursRepository;
 import org.json.JSONObject;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
