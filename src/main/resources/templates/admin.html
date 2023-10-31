@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Solar Watch - admin</title>
+
+    <link rel="stylesheet" href="../static/styles/main.css" th:href="@{/styles/main.css}" />
+</head>
+<body>
+<div class="container">
+    <h1>Admin panel</h1>
+
+    <h2>Lista użytkowników </h2>
+    <ul>
+        <li th:each="email: ${userEmails}">
+            <span th:text="${email}">jan@kowalski.com</span>
+            &nbsp;
+            <a href="#" th:href="@{/admin/delete-user(email=${email})}">Usuń</a>
+        </li>
+    </ul>
+
+    <h2>Lista miast</h2>
+    <h2>Lista wschodów i zachodów</h2>
+</div>
+</body>
+</html>
