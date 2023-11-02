@@ -1,4 +1,4 @@
-package com.codecool.solarwatch.model;
+package com.codecool.solarwatch.sun.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

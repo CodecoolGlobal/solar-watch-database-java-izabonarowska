@@ -1,10 +1,9 @@
-package com.codecool.solarwatch.controller;
+package com.codecool.solarwatch.sun.controller;
 
-import com.codecool.solarwatch.model.City;
-import com.codecool.solarwatch.model.Coordinate;
-import com.codecool.solarwatch.model.SunDTO;
-import com.codecool.solarwatch.service.GeocodingService;
-import com.codecool.solarwatch.service.SunriseSunsetService;
+import com.codecool.solarwatch.sun.model.City;
+import com.codecool.solarwatch.sun.model.SunDTO;
+import com.codecool.solarwatch.sun.service.GeocodingService;
+import com.codecool.solarwatch.sun.service.SunriseSunsetService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;

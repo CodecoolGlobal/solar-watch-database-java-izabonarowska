@@ -1,7 +1,7 @@
-package com.codecool.solarwatch.service;
+package com.codecool.solarwatch.sun.service;
 
-import com.codecool.solarwatch.model.City;
-import com.codecool.solarwatch.repository.CityRepository;
+import com.codecool.solarwatch.sun.model.City;
+import com.codecool.solarwatch.sun.repository.CityRepository;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.springframework.stereotype.Service;

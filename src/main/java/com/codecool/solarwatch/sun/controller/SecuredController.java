@@ -1,4 +1,4 @@
-package com.codecool.solarwatch.security.controller;
+package com.codecool.solarwatch.sun.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

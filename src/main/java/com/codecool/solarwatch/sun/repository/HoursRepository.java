@@ -1,7 +1,7 @@
-package com.codecool.solarwatch.repository;
+package com.codecool.solarwatch.sun.repository;
 
-import com.codecool.solarwatch.model.City;
-import com.codecool.solarwatch.model.Hours;
+import com.codecool.solarwatch.sun.model.City;
+import com.codecool.solarwatch.sun.model.Hours;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

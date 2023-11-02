@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Solar Watch - admin</title>
 
-    <link rel="stylesheet" href="../static/styles/main.css" th:href="@{/styles/main.css}" />
+    <link rel="stylesheet" href="../static/styles/main.css" th:href="@{/styles/main.css}"/>
 </head>
 <body>
 <div class="container">
@@ -20,7 +20,29 @@
     </ul>
 
     <h2>Lista miast</h2>
-    <h2>Lista wschodów i zachodów</h2>
+    <table>
+        <thead>
+        <tr>
+            <th>City</th>
+            <th>Date</th>
+            <th>Sunrise</th>
+            <th>Sunset</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="cityData: ${cityDataList}">
+            <td th:text="${cityData.city.name}"></td>
+            <td th:text="${#dates.format(cityData.date, 'yyyy-MM-dd')}"></td>
+            <td th:text="${cityData.sunrise}"></td>
+            <td th:text="${cityData.sunset}"></td>
+            <td>
+                <a th:href="@{/edit/{id}(id=${cityData.id})}">Edit</a>
+                <a th:href="@{/delete/{id}(id=${cityData.id})}">Delete</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
 </div>
 </body>
 </html>
