@@ -66,7 +66,7 @@ public class UserService {
         userRepository.save(user);
     }
 
-    private boolean isCurrentlyUserAdmin() {
+    public boolean isCurrentlyUserAdmin() {
         return SecurityContextHolder.getContext()
                 .getAuthentication()
                 .getAuthorities().stream()
