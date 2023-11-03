@@ -1,7 +1,6 @@
 package com.codecool.solarwatch.user.controller;
 
 import com.codecool.solarwatch.sun.model.Hours;
-import com.codecool.solarwatch.sun.repository.CityRepository;
 import com.codecool.solarwatch.sun.repository.HoursRepository;
 import com.codecool.solarwatch.sun.service.HoursService;
 import com.codecool.solarwatch.user.service.UserService;
@@ -15,15 +14,12 @@ import java.util.List;
 @RequestMapping("/admin")
 public class AdminController {
     private final UserService userService;
-    private final CityRepository cityRepository;
     private final HoursService hoursService;
-
     private final HoursRepository hoursRepository;
 
 
-    public AdminController(UserService userService, CityRepository cityRepository, HoursService hoursService, HoursRepository hoursRepository) {
+    public AdminController(UserService userService, HoursService hoursService, HoursRepository hoursRepository) {
         this.userService = userService;
-        this.cityRepository = cityRepository;
         this.hoursService = hoursService;
         this.hoursRepository = hoursRepository;
     }
