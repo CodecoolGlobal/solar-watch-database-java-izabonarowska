@@ -49,20 +49,4 @@ public class AdminController {
         }
         return "redirect:/error";
     }
-
-//    @PostMapping("/hours/update")
-//    public String updateHour(@ModelAttribute Hours updatedHour) {
-//        if (userService.isCurrentlyUserAdmin()) {
-//            Hours existingHour = hoursService.getHoursWithCityInfo().stream().findById(updatedHour.getId()).orElse(null);
-//            if (existingHour != null) {
-//                existingHour.setDate(updatedHour.getDate());
-//                existingHour.setSunrise(updatedHour.getSunrise());
-//                existingHour.setSunset(updatedHour.getSunset());
-//                hoursRepository.save(existingHour);
-//            }
-//            return "redirect:/admin";
-//        }
-//        return "redirect:/error";
-//    }
-
 }

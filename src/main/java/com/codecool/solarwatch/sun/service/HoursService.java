@@ -16,13 +16,19 @@ public class HoursService {
     private CityRepository cityRepository;
 
     public List<Hours> getHoursWithCityInfo() {
-        List<Hours> hoursList = hoursRepository.findAll();
-
-        for (Hours hour : hoursList) {
-            City city = cityRepository.findById(hour.getCity().getId()).orElse(null);
-            hour.setCity(city);
+        if(hoursRepository !=null){
+            List<Hours> hoursList = hoursRepository.findAll();
+            for (Hours hour : hoursList) {
+                City city = cityRepository.findById(hour.getCity().getId()).orElse(null);
+                hour.setCity(city);
+            }
+            return hoursList;
+        } else {
+            System.out.println("Hours repository jest nullem");
+            return (List<Hours>) hoursRepository;
         }
-        return hoursList;
+
+
     }
 
     public void deleteById(Long id) {

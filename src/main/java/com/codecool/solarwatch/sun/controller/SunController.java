@@ -38,7 +38,5 @@ public class SunController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
         }
     }
-
-//    PutMapping do update
 }
 

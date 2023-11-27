@@ -7,8 +7,12 @@
 <body>
 <h1>Strona główna</h1>
 <form class="city" action="/sun" method="get" th:object="${sun}">
-    <input name="city" placeholder="nazwa miasta" class="form-item">
-    <input name="date" placeholder="data" type="date" class="form-item">
+    <label>
+        <input name="city" placeholder="nazwa miasta" class="form-item">
+    </label>
+    <label>
+        <input name="date" placeholder="data" type="date" class="form-item">
+    </label>
     <button type="submit" class="button">Wyszkuja miasta</button>
 </form>
 </body>

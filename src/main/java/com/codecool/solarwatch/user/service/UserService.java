@@ -19,7 +19,6 @@ public class UserService {
     private static final String ADMIN_AUTHORITY = "ROLE_ADMIN";
     private final UserRepository userRepository;
     private final UserRoleRepository userRoleRepository;
-
     private final PasswordEncoder passwordEncoder;
 
     public UserService(UserRepository userRepository, UserRoleRepository userRoleRepository, PasswordEncoder passwordEncoder) {
@@ -28,17 +27,13 @@ public class UserService {
         this.passwordEncoder = passwordEncoder;
     }
 
-
     public Optional<UserCredentialsDTO> findCredentialsByEmail(String email) {
-        return userRepository.findByEmail(email)
-                .map(UserCredentialsDTOMapper::map);
-    }
-
-    public List<String> findAllUserEmails() {
-        return userRepository.findAllUsersByRoles_Name(USER_ROLE)
-                .stream()
-                .map(User::getEmail)
-                .toList();
+        try {
+            return userRepository.findByEmail(email)
+                    .map(UserCredentialsDTOMapper::map);
+        } catch (Exception e) {
+            return Optional.empty();
+        }
     }
 
     @Transactional
@@ -71,5 +66,12 @@ public class UserService {
                 .getAuthentication()
                 .getAuthorities().stream()
                 .anyMatch(authority -> authority.getAuthority().equalsIgnoreCase(ADMIN_AUTHORITY));
+    }
+
+    public List<String> findAllUserEmails() {
+        List<User> allUsers = userRepository.findAll();
+        return allUsers.stream()
+                .map(User::getEmail)
+                .toList();
     }
 }
