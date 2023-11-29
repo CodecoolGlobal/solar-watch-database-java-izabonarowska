@@ -16,7 +16,6 @@ import java.time.LocalDate;
 @RestController
 @RequestMapping("/sun")
 public class SunController {
-
     private final SunriseSunsetService sunriseSunsetService;
     private final GeocodingService geocodingService;
 
@@ -38,7 +37,5 @@ public class SunController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
         }
     }
-
-//    PutMapping do update
 }
 
