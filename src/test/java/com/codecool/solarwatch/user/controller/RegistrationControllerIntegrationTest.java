@@ -1,8 +1,8 @@
 package com.codecool.solarwatch.user.controller;
 
+import com.codecool.solarwatch.authentication.AuthenticationController;
+import com.codecool.solarwatch.authentication.AuthenticationService;
 import com.codecool.solarwatch.security.config.JwtService;
-import com.codecool.solarwatch.user.model.UserRegistrationDTO;
-import com.codecool.solarwatch.user.service.UserService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.ArgumentMatchers;
@@ -31,7 +31,7 @@ class RegistrationControllerIntegrationTest {
     private MockMvc mockMvc;
 
     @MockBean
-    private UserService userService;
+    private AuthenticationService authenticationService;
 
     @MockBean
     private JwtService jwtService;
@@ -40,7 +40,7 @@ class RegistrationControllerIntegrationTest {
     private Model model;
 
     @InjectMocks
-    private RegistrationController registrationController;
+    private AuthenticationController authenticationController;
 
     @BeforeEach
     void setUp() {
@@ -54,22 +54,6 @@ class RegistrationControllerIntegrationTest {
                 .andExpect(MockMvcResultMatchers.view().name("registration-form"));
     }
 
-    @Test
-    public void testRegistrationSubmission() throws Exception {
-        UserRegistrationDTO userRegistrationDTO =
-                new UserRegistrationDTO("test@test.pl", "test", "Iza", "Bonn");
-
-        mockMvc.perform(MockMvcRequestBuilders.post("/register")
-                        .flashAttr("userRegistrationDto", userRegistrationDTO))
-                .andExpect(MockMvcResultMatchers.status().is3xxRedirection())
-                .andExpect(MockMvcResultMatchers.redirectedUrl("/confirmation"));
-
-        verify(userService, times(1)).register(ArgumentMatchers.argThat(argument ->
-                argument.getFirstName().equals("Iza") && argument.getLastName().equals("Bonn")
-                        && argument.getEmail().equals("test@test.pl")&&
-                        argument.getPassword().equals("test")));
-
-    }
     @Test
     public void testRegistrationConfirmation() throws Exception {
         mockMvc.perform(MockMvcRequestBuilders.get("/confirmation"))

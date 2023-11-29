@@ -12,14 +12,42 @@
 <div class="container">
     <h1 class="login-header">Zaloguj się</h1>
     <i class="fa-solid fa-lock fa-10x lock-icon"></i>
-    <form class="login-form" action="/login" method="post">
-        <input name="username" placeholder="nazwa użytkownika" class="form-item">
+    <form class="login-form">
+        <input name="email" placeholder="email" class="form-item">
         <input name="password" placeholder="hasło" type="password" class="form-item">
-        <button type="submit" class="button">Zaloguj się</button>
+        <button type="button" onclick="login()">Zaloguj się</button>
     </form>
     <p>
         Nie masz jeszcze konta? <a href="#" th:href="@{/register}">Zarejestruj się</a>
     </p>
 </div>
+
+<script>
+    function login() {
+        const email = document.querySelector('input[name="email"]').value;
+        const password = document.querySelector('input[name="password"]').value;
+
+        const data = {
+            email: email,
+            password: password
+        };
+
+        fetch('/auth/authenticate', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+            .then(response => {
+                // Handle response
+                console.log(response);
+            })
+            .catch(error => {
+                // Handle error
+                console.error('Error:', error);
+            });
+    }
+</script>
 </body>
 </html>

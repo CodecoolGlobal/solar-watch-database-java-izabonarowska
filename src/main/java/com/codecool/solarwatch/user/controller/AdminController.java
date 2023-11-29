@@ -15,13 +15,10 @@ import java.util.List;
 public class AdminController {
     private final UserService userService;
     private final HoursService hoursService;
-    private final HoursRepository hoursRepository;
 
-
-    public AdminController(UserService userService, HoursService hoursService, HoursRepository hoursRepository) {
+    public AdminController(UserService userService, HoursService hoursService) {
         this.userService = userService;
         this.hoursService = hoursService;
-        this.hoursRepository = hoursRepository;
     }
 
     @GetMapping

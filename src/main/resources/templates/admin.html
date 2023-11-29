@@ -8,19 +8,19 @@
 </head>
 <body>
 <div class="admin-container">
-    <h1 class = "admin-header">Admin panel</h1>
+    <h1 class="admin-header">Admin panel</h1>
 
-    <h2 class = "admin-one">Lista użytkowników</h2>
+    <h2 class="admin-one">Lista użytkowników</h2>
     <ul>
         <li th:each="email: ${userEmails}">
-            <span th:text="${email}">jan@kowalski.com</span>
+            <span th:text="${email}"></span>
             &nbsp;
             <a href="#" th:href="@{/admin/delete-user(email=${email})}">Usuń</a>
         </li>
     </ul>
 
-    <h2 class = "admin-one">Lista miast</h2>
-<!--    <table>-->
+    <h2 class="admin-one">Lista miast</h2>
+    <table>
         <thead>
         <tr>
             <th>Data</th>
@@ -45,7 +45,7 @@
             <td th:text="${hour.city.state}"></td>
             <td th:text="${hour.city.country}"></td>
             <td>
-            <a th:href="@{/admin/hours/delete/{id}(id=${hour.id})}">Usuń</a>
+                <a th:href="@{/admin/hours/delete/{id}(id=${hour.id})}">Usuń</a>
             </td>
         </tr>
         </tbody>
