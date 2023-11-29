@@ -1,7 +1,5 @@
 package com.codecool.solarwatch.user.model;
 
-import lombok.Getter;
-import lombok.Setter;
 
 import java.util.Set;
 

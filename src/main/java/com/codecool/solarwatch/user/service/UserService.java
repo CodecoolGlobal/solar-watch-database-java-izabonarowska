@@ -11,8 +11,6 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Optional;
-
-
 @Service
 public class UserService {
     private static final String USER_ROLE = "USER";
@@ -27,13 +25,8 @@ public class UserService {
         this.passwordEncoder = passwordEncoder;
     }
 
-    public Optional<UserCredentialsDTO> findCredentialsByEmail(String email) {
-        try {
-            return userRepository.findByEmail(email)
-                    .map(UserCredentialsDTOMapper::map);
-        } catch (Exception e) {
-            return Optional.empty();
-        }
+    public UserCredentialsDTO findCredentialsByEmail(String email) {
+            return (UserCredentialsDTOMapper.map(userRepository.findByEmail(email)));
     }
 
     @Transactional

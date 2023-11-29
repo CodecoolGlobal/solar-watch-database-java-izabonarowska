@@ -16,7 +16,6 @@ import java.time.LocalDate;
 @RestController
 @RequestMapping("/sun")
 public class SunController {
-
     private final SunriseSunsetService sunriseSunsetService;
     private final GeocodingService geocodingService;
 
