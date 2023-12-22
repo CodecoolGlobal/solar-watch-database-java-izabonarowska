@@ -25,10 +25,6 @@ public class UserService {
         this.passwordEncoder = passwordEncoder;
     }
 
-    public UserCredentialsDTO findCredentialsByEmail(String email) {
-            return (UserCredentialsDTOMapper.map(userRepository.findByEmail(email)));
-    }
-
     @Transactional
     public void deleteUserByEmail(String email) {
         if (isCurrentlyUserAdmin()) {

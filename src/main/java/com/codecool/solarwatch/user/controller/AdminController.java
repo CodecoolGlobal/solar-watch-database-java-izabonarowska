@@ -1,7 +1,6 @@
 package com.codecool.solarwatch.user.controller;
 
 import com.codecool.solarwatch.sun.model.Hours;
-import com.codecool.solarwatch.sun.repository.HoursRepository;
 import com.codecool.solarwatch.sun.service.HoursService;
 import com.codecool.solarwatch.user.service.UserService;
 import org.springframework.stereotype.Controller;
