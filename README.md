@@ -1,10 +1,11 @@
 For english version please scroll down
 # Sprawdź kiedy będzie zachód słońca
-
-![Screen 1](https://i.ibb.co/zHhjZHP/Zrzut-ekranu-2023-12-22-153716.png)
-![Screen 2](https://i.ibb.co/Qbp9B4J/Zrzut-ekranu-2023-12-22-153735.png)
-![Screen 3](https://i.ibb.co/Wy2DM7s/Zrzut-ekranu-2023-12-22-153803.png)
-![Screen 4](https://i.ibb.co/wzDrbXn/Zrzut-ekranu-2023-12-22-153747.png)
+<div style="display: flex; justify-content: space-between;">
+    <img src="https://i.ibb.co/zHhjZHP/Zrzut-ekranu-2023-12-22-153716.png" alt="Screen 1" width="200">
+    <img src="https://i.ibb.co/Qbp9B4J/Zrzut-ekranu-2023-12-22-153735.png" alt="Screen 2" width="200">
+    <img src="https://i.ibb.co/Wy2DM7s/Zrzut-ekranu-2023-12-22-153803.png" alt="Screen 3" width="200">
+    <img src="https://i.ibb.co/wzDrbXn/Zrzut-ekranu-2023-12-22-153747.png" alt="Screen 4" width="200">
+</div>
 
 ## Opis projektu
 
@@ -52,6 +53,9 @@ Jako użytkownik chcę poznać godziny wschodu i zachodu słońca dla miasta, w 
 ## Stan projektu
 
 Projekt jest w fazie rozwoju. Aktualnie zaimplementowałam podstawową funkcjonalność API, możliwość rejestracji użytkowników, logowanie oraz panel administratora.
+
+
+
 
 # Solar Watch
 
